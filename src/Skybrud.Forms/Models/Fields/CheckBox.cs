@@ -1,6 +1,4 @@
-﻿using Skybrud.Forms.Models.Fields.Input;
-
-namespace Skybrud.Forms.Models.Fields.CheckBox {
+﻿namespace Skybrud.Forms.Models.Fields {
 
     /// <summary>
     /// Class representing a HTML <c>checkbox</c> field.

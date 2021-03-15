@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Skybrud.Forms.Models.Fields.Lists {
+namespace Skybrud.Forms.Models.Fields {
     
     public static class ListExtensions {
 

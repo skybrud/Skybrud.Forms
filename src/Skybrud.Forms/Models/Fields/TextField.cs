@@ -1,4 +1,4 @@
-﻿namespace Skybrud.Forms.Models.Fields.Input {
+﻿namespace Skybrud.Forms.Models.Fields {
 
     /// <summary>
     /// Class representing a HTML <c>text</c> field.

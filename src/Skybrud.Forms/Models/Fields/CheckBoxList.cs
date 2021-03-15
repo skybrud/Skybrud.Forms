@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Skybrud.Forms.Models.Fields.Lists;
 
-namespace Skybrud.Forms.Models.Fields.CheckBox {
+namespace Skybrud.Forms.Models.Fields {
 
     public class CheckBoxList : ListBase {
 

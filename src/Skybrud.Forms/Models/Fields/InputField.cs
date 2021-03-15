@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Skybrud.Forms.Models.Fields.Input {
+namespace Skybrud.Forms.Models.Fields {
 
     public abstract class InputField : FieldBase {
 

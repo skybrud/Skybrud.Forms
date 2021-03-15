@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Skybrud.Forms.Models.Fields.Lists {
+namespace Skybrud.Forms.Models.Fields {
 
     public abstract class ListBase : FieldBase {
 

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using Newtonsoft.Json;
-using Skybrud.Essentials.Reflection.Extensions;
-using Skybrud.Essentials.Strings.Extensions;
-using Skybrud.Forms.Models.Fields.Lists;
+﻿using System.Collections.Generic;
 
-namespace Skybrud.Forms.Models.Fields.Radio {
+namespace Skybrud.Forms.Models.Fields {
 
     public class RadioList : ListBase {
 

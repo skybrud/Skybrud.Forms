@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Skybrud.Essentials.Reflection.Extensions;
 using Skybrud.Essentials.Strings.Extensions;
 
-namespace Skybrud.Forms.Models.Fields.Lists{
+namespace Skybrud.Forms.Models.Fields{
     
     public class ListItem {
 

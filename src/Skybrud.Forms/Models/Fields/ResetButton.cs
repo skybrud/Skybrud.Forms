@@ -1,4 +1,4 @@
-﻿namespace Skybrud.Forms.Models.Fields.Buttons {
+﻿namespace Skybrud.Forms.Models.Fields {
 
     public class ResetButton : Button {
 
