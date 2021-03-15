@@ -1,12 +1,14 @@
 ﻿namespace Skybrud.Forms.Models.Fields {
 
-    public class Button : FieldBase {
+    public class Button : ButtonBase {
+
+        protected const string FieldType = "button";
 
         #region Constructors
 
-        public Button() : base("button", null, null) { }
+        public Button() : base(FieldType) { }
 
-        protected Button(string type) : base(type, null, null) { }
+        public Button(string name, string label) : base(FieldType, name, label) { }
 
         #endregion
 
