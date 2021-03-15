@@ -1,8 +1,12 @@
 using System;
+using System.ComponentModel;
 using Newtonsoft.Json;
+using Skybrud.Essentials.Reflection.Extensions;
+using Skybrud.Essentials.Strings.Extensions;
 
-namespace Skybrud.Forms.Models.Fields.Radio{
-    public class RadioListItem {
+namespace Skybrud.Forms.Models.Fields.Lists{
+    
+    public class ListItem {
 
         #region Properties
 
@@ -19,36 +23,45 @@ namespace Skybrud.Forms.Models.Fields.Radio{
 
         #region Constructors
 
-        public RadioListItem(int value, string label) {
+        public ListItem(int value, string label) {
             Value = value.ToString();
             Label = label;
         }
 
-        public RadioListItem(int value, string label, bool isChecked) {
-            Value = value.ToString();
-            Label = label;
-            IsChecked = isChecked;
-        }
-
-        public RadioListItem(Guid value, string label) {
-            Value = value.ToString();
-            Label = label;
-        }
-
-        public RadioListItem(Guid value, string label, bool isChecked) {
+        public ListItem(int value, string label, bool isChecked) {
             Value = value.ToString();
             Label = label;
             IsChecked = isChecked;
         }
 
-        public RadioListItem(string value, string label) {
+        public ListItem(Guid value, string label) {
+            Value = value.ToString();
+            Label = label;
+        }
+
+        public ListItem(Guid value, string label, bool isChecked) {
+            Value = value.ToString();
+            Label = label;
+            IsChecked = isChecked;
+        }
+
+        public ListItem(string value, string label) {
             Value = value;
             Label = label;
         }
 
-        public RadioListItem(string value, string label, bool isChecked) {
+        public ListItem(string value, string label, bool isChecked) {
             Value = value;
             Label = label;
+            IsChecked = isChecked;
+        }
+
+        public ListItem(Enum value) {
+            Value = value.ToCamelCase();
+            Label = value.HasCustomAttribute(out DescriptionAttribute result) ? result.Description : value.ToString();
+        }
+
+        public ListItem(Enum value, bool isChecked) : this(value) {
             IsChecked = isChecked;
         }
 

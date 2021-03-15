@@ -4,6 +4,7 @@ using Skybrud.Forms.Models.Fields;
 using Skybrud.Forms.Models.Fields.Buttons;
 using Skybrud.Forms.Models.Fields.CheckBox;
 using Skybrud.Forms.Models.Fields.Input;
+using Skybrud.Forms.Models.Fields.Lists;
 using Skybrud.Forms.Models.Fields.Radio;
 
 namespace Skybrud.Forms.Models {
@@ -129,22 +130,22 @@ namespace Skybrud.Forms.Models {
 
         }
 
-        public Form AddRadioGroup(string name, IEnumerable<RadioListItem> value) {
+        public Form AddRadioGroup(string name, IEnumerable<ListItem> value) {
             Fields.Add(new RadioList(name, value));
             return this;
         }
 
-        public Form AddRadioGroup(string name, params RadioListItem[] value) {
+        public Form AddRadioGroup(string name, params ListItem[] value) {
             Fields.Add(new RadioList(name, value));
             return this;
         }
 
-        public Form AddRadioGroup(string name, string label, IEnumerable<RadioListItem> value) {
+        public Form AddRadioGroup(string name, string label, IEnumerable<ListItem> value) {
             Fields.Add(new RadioList(name, label, value));
             return this;
         }
 
-        public Form AddRadioGroup(string name, string label, params RadioListItem[] value) {
+        public Form AddRadioGroup(string name, string label, params ListItem[] value) {
             Fields.Add(new RadioList(name, label, value));
             return this;
         }
