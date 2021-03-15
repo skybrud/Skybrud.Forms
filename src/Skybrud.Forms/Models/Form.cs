@@ -57,7 +57,7 @@ namespace Skybrud.Forms.Models {
         }
 
         public Form AddHiddenField(string name, object value) {
-            Fields.Add(new FieldBase("hidden", name, value));
+            Fields.Add(new HiddenField(name, value));
             return this;
         }
 
