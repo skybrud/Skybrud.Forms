@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Skybrud.Forms.Models.Fields;
 using Skybrud.Forms.Models.Fields.Buttons;
 using Skybrud.Forms.Models.Fields.CheckBox;
+using Skybrud.Forms.Models.Fields.DropDown;
 using Skybrud.Forms.Models.Fields.Input;
 using Skybrud.Forms.Models.Fields.Lists;
 using Skybrud.Forms.Models.Fields.Radio;
@@ -109,6 +110,66 @@ namespace Skybrud.Forms.Models {
                 IsRequired = required,
                 Description = description
             });
+            return form;
+        }
+
+        public static T AddCheckBoxList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
+            form?.Fields.Add(new CheckBoxList(name, items));
+            return form;
+        }
+
+        public static T AddCheckBoxList<T>(this T form, string name, params ListItem[] items) where T : Form {
+            form?.Fields.Add(new CheckBoxList(name, items));
+            return form;
+        }
+
+        public static T AddCheckBoxList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
+            form?.Fields.Add(new CheckBoxList(name, label, items));
+            return form;
+        }
+
+        public static T AddCheckBoxList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
+            form?.Fields.Add(new CheckBoxList(name, label, items));
+            return form;
+        }
+
+        public static T AddCheckBoxList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
+            form?.Fields.Add(new CheckBoxList(name, label).AddItems<CheckBoxList, TEnum>());
+            return form;
+        }
+
+        public static T AddCheckBoxList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
+            form?.Fields.Add(new CheckBoxList(name, label).AddItems(defaultValue));
+            return form;
+        }
+
+        public static T AddDropDownList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
+            form?.Fields.Add(new DropDownList(name, items));
+            return form;
+        }
+
+        public static T AddDropDownList<T>(this T form, string name, params ListItem[] items) where T : Form {
+            form?.Fields.Add(new DropDownList(name, items));
+            return form;
+        }
+
+        public static T AddDropDownList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
+            form?.Fields.Add(new DropDownList(name, label, items));
+            return form;
+        }
+
+        public static T AddDropDownList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
+            form?.Fields.Add(new DropDownList(name, label, items));
+            return form;
+        }
+
+        public static T AddDropDownList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
+            form?.Fields.Add(new DropDownList(name, label).AddItems<DropDownList, TEnum>());
+            return form;
+        }
+
+        public static T AddDropDownList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
+            form?.Fields.Add(new DropDownList(name, label).AddItems(defaultValue));
             return form;
         }
 
