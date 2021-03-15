@@ -12,6 +12,8 @@ namespace Skybrud.Forms.Models.Fields {
     /// </see>
     public class TextArea : InputField {
 
+        protected const string FieldType = "textarea";
+
         #region Properties
 
         /// <summary>
@@ -27,7 +29,11 @@ namespace Skybrud.Forms.Models.Fields {
         /// <summary>
         /// Initialize a new textarea field.
         /// </summary>
-        public TextArea() : base("textarea") { }
+        public TextArea() : base(FieldType) { }
+
+        public TextArea(string name) : base(FieldType, name) { }
+
+        public TextArea(string name, string value) : base(FieldType, name, value) { }
 
         #endregion
 

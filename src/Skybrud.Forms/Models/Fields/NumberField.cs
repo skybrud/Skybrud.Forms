@@ -7,6 +7,8 @@ namespace Skybrud.Forms.Models.Fields {
     /// </summary>
     public class NumberField : InputField {
 
+        protected const string FieldType = "number";
+
         #region Properties
 
         [JsonProperty("min", NullValueHandling = NullValueHandling.Ignore)]
@@ -19,7 +21,11 @@ namespace Skybrud.Forms.Models.Fields {
 
         #region Constructors
 
-        public NumberField() : base("number") { }
+        public NumberField() : base(FieldType) { }
+
+        public NumberField(string name) : base(FieldType, name) { }
+
+        public NumberField(string name, string value) : base(FieldType, name, value) { }
 
         #endregion
 

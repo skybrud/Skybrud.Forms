@@ -7,7 +7,7 @@ namespace Skybrud.Forms.Models.Fields{
         #region Properties
 
         [JsonProperty("type", Order = -99, NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; protected set; }
+        public string Type { get; }
 
         [JsonProperty("name", Order = -98, NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
@@ -28,7 +28,9 @@ namespace Skybrud.Forms.Models.Fields{
 
         #region Constructors
 
-        public FieldBase() { }
+        public FieldBase(string type) {
+            Type = type;
+        }
 
         public FieldBase(string type, string name) {
             Type = type;
@@ -39,14 +41,6 @@ namespace Skybrud.Forms.Models.Fields{
             Type = type;
             Name = name;
             Value = value;
-        }
-
-        #endregion
-
-        #region Static methods
-
-        public static FieldBase Hidden(string name, object value) {
-            return new FieldBase("hidden", name, value);
         }
 
         #endregion

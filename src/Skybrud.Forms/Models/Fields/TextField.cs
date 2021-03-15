@@ -5,9 +5,15 @@
     /// </summary>
     public class TextField : InputField {
 
+        protected const string FieldType = "text";
+
         #region Constructors
 
-        public TextField() : base("text") { }
+        public TextField() : base(FieldType) { }
+
+        public TextField(string name) : base(FieldType, name) { }
+
+        public TextField(string name, string value) : base(FieldType, name, value) { }
 
         #endregion
 

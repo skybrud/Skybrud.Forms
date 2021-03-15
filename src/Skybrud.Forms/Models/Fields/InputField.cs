@@ -24,6 +24,10 @@ namespace Skybrud.Forms.Models.Fields {
 
         protected InputField(string type) : base(type, null, null) { }
 
+        protected InputField(string type, string name) : base(type, name) { }
+
+        protected InputField(string type, string name, string value) : base(type, name, value) { }
+
         #endregion
 
     }
