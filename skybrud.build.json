@@ -1,0 +1,30 @@
+{
+  "tasks": {
+    "postBuild": [
+      {
+        "alias": "zip",
+        "destination": "releases/github/{packageName}.v{version}.zip",
+        "files": [
+          {
+            "source": "src/{packageName}/bin/Release/",
+            "destination": "bin/",
+            "patterns": [
+              "/Skybrud.Essentials.dll$",
+              "/Skybrud.Essentials.xml$",
+              "/Skybrud.Forms.dll$",
+              "/Skybrud.Forms.xml$",
+              "/Newtonsoft.Json.dll$",
+              "/Newtonsoft.Json.xml$"
+            ]
+          },
+          {
+            "source": "src",
+            "patterns": [
+              "LICENSE.html"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
