@@ -2,7 +2,7 @@
 
 namespace Skybrud.Forms.Models.Fields{
 
-    public class FieldBase {
+    public abstract class FieldBase {
 
         #region Properties
 
