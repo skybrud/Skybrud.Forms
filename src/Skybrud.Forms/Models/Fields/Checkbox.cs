@@ -3,11 +3,11 @@
     /// <summary>
     /// Class representing a HTML <c>checkbox</c> field.
     /// </summary>
-    public class CheckBoxTemp : InputField {
+    public class Checkbox : InputField {
 
-        public CheckBoxTemp() : base("checkbox") { }
+        public Checkbox() : base("checkbox") { }
 
-        public CheckBoxTemp(string name, string value) : base("checkbox") {
+        public Checkbox(string name, string value) : base("checkbox") {
             Name = name;
             Value = value;
         }
