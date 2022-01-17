@@ -99,7 +99,7 @@ namespace Skybrud.Forms.Models {
         }
 
         public static T AddCheckBox<T>(this T form, string name, string value = null, string label = null, bool required = false, string description = null) where T : Form {
-            form?.Fields.Add(new CheckBox(name, value) {
+            form?.Fields.Add(new CheckBoxTemp(name, value) {
                 Label = label,
                 IsRequired = required,
                 Description = description
@@ -108,32 +108,32 @@ namespace Skybrud.Forms.Models {
         }
 
         public static T AddCheckBoxList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
-            form?.Fields.Add(new CheckBoxList(name, items));
+            form?.Fields.Add(new CheckBoxListTemp(name, items));
             return form;
         }
 
         public static T AddCheckBoxList<T>(this T form, string name, params ListItem[] items) where T : Form {
-            form?.Fields.Add(new CheckBoxList(name, items));
+            form?.Fields.Add(new CheckBoxListTemp(name, items));
             return form;
         }
 
         public static T AddCheckBoxList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
-            form?.Fields.Add(new CheckBoxList(name, label, items));
+            form?.Fields.Add(new CheckBoxListTemp(name, label, items));
             return form;
         }
 
         public static T AddCheckBoxList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
-            form?.Fields.Add(new CheckBoxList(name, label, items));
+            form?.Fields.Add(new CheckBoxListTemp(name, label, items));
             return form;
         }
 
         public static T AddCheckBoxList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
-            form?.Fields.Add(new CheckBoxList(name, label).AddItems<CheckBoxList, TEnum>());
+            form?.Fields.Add(new CheckBoxListTemp(name, label).AddItems<CheckBoxListTemp, TEnum>());
             return form;
         }
 
         public static T AddCheckBoxList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
-            form?.Fields.Add(new CheckBoxList(name, label).AddItems(defaultValue));
+            form?.Fields.Add(new CheckBoxListTemp(name, label).AddItems(defaultValue));
             return form;
         }
 
