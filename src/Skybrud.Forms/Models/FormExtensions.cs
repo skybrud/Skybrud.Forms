@@ -19,6 +19,11 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+        public static T SetEndpointUrl<T>(this T form, string endpointUrl) where T : Form {
+            if (form != null) form.EndpointUrl = endpointUrl;
+            return form;
+        }
+
         public static T AddField<T>(this T form, FieldBase field) where T : Form {
             form?.Fields.Add(field);
             return form;
