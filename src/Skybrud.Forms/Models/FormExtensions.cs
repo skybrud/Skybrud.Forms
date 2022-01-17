@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Skybrud.Forms.Models.Fields;
 
+// ReSharper disable InconsistentNaming
+
 namespace Skybrud.Forms.Models {
     
     /// <summary>
