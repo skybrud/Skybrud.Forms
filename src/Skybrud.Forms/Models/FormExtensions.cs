@@ -7,40 +7,70 @@ using Skybrud.Forms.Models.Fields;
 namespace Skybrud.Forms.Models {
     
     /// <summary>
-    /// Various extension methos for <see cref="Form"/> (and classes extending <see cref="Form"/>).
+    /// Various extension methods for <see cref="Form"/> (and classes extending <see cref="Form"/>).
     /// </summary>
     public static class FormExtensions {
 
+        /// <summary>
+        /// Sets the title of <paramref name="form"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="title">The new title.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T SetTitle<T>(this T form, string title) where T : Form {
             if (form != null) form.Title = title;
             return form;
         }
 
-        public static T SetUrl<T>(this T form, string url) where T : Form {
-            if (form != null) form.Url = url;
-            return form;
-        }
-
+        /// <summary>
+        /// Sets the endpoint URL of <paramref name="form"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="endpointUrl">The new endpoint URL.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T SetEndpointUrl<T>(this T form, string endpointUrl) where T : Form {
             if (form != null) form.EndpointUrl = endpointUrl;
             return form;
         }
 
+        /// <summary>
+        /// Appends the specified <paramref name="field"/> to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="field">The field to be added.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddField<T>(this T form, FieldBase field) where T : Form {
             form?.Fields.Add(field);
             return form;
         }
 
-        public static T AddField<T>(this T form, string type, string name, object value) where T : Form {
-            form?.Fields.Add(new FieldBase(type, name, value));
-            return form;
-        }
-
+        /// <summary>
+        /// Appends a new <c>hidden</c> input field field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddHiddenField<T>(this T form, string name, object value) where T : Form {
             form?.Fields.Add(new HiddenField(name, value));
             return form;
         }
 
+        /// <summary>
+        /// Appends a new <c>email</c> input field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="placeholder">The placeholder text of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddEmailField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, bool required = false) where T : Form {
             form?.Fields.Add(new EmailField {
                 Name = name,
@@ -52,6 +82,19 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+        /// <summary>
+        /// Appends a new <c>text</c> input field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="placeholder">The placeholder text of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="pattern">A regex pattern the value should match.</param>
+        /// <param name="size">The size of the input field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddTextField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false) where T : Form {
             form?.Fields.Add(new TextField {
                 Name = name,
@@ -65,8 +108,49 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
-        public static T AddTextarea<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false) where T : Form {
+        /// <summary>
+        /// Appends a new <c>&lt;textarea&gt;</c> field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the textarea.</param>
+        /// <param name="value">The value of the textarea.</param>
+        /// <param name="placeholder">The placeholder text of the textarea.</param>
+        /// <param name="label">The label of the textarea.</param>
+        /// <param name="pattern">A regex pattern the value should match.</param>
+        /// <param name="size">The size of the textarea.</param>
+        /// <param name="rows">The textarea's height in rows.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddTextarea<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, int? rows = null, bool required = false) where T : Form {
             form?.Fields.Add(new TextArea {
+                Name = name,
+                Value = value,
+                Placeholder = placeholder,
+                Label = label,
+                Pattern = pattern,
+                Size = size,
+                Rows = rows,
+                IsRequired = required
+            });
+            return form;
+        }
+        
+        /// <summary>
+        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="placeholder">The placeholder text of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="pattern">A regex pattern the value should match.</param>
+        /// <param name="size">The size of the input field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddTelField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false) where T : Form {
+            form?.Fields.Add(new TelField {
                 Name = name,
                 Value = value,
                 Placeholder = placeholder,
@@ -78,19 +162,26 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
-        public static T AddTelField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, bool required = false) where T : Form {
-            form?.Fields.Add(new TelField {
-                Name = name,
-                Value = value,
-                Placeholder = placeholder,
-                Label = label,
-                Pattern = pattern,
-                IsRequired = required
-            });
-            return form;
-        }
-
-        public static T AddNumberField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? min = null, int? max = null, int? size = null, bool required = false) where T : Form {
+        /// <summary>
+        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="placeholder">The placeholder text of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="pattern">A regex pattern the value should match.</param>
+        /// <param name="min">The value for the input field's <c>min</c> attribute.</param>
+        /// <param name="max">The value for the input field's <c>max</c> attribute.</param>
+        /// <param name="step">The value for the input field's <c>step</c> attribute.</param>
+        /// <param name="size">The size of the input field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        /// <see>
+        ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number</cref>
+        /// </see>
+        public static T AddNumberField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? min = null, int? max = null, int? step = null, int? size = null, bool required = false) where T : Form {
             form?.Fields.Add(new NumberField {
                 Name = name,
                 Value = value,
@@ -99,12 +190,27 @@ namespace Skybrud.Forms.Models {
                 Pattern = pattern,
                 Min = min,
                 Max = max,
+                Step = step,
                 Size = size,
                 IsRequired = required
             });
             return form;
         }
 
+        /// <summary>
+        /// Appends a new <c>checkbox</c> input field to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <param name="description">The description of the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        /// <see>
+        ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox</cref>
+        /// </see>
         public static T AddCheckbox<T>(this T form, string name, string value = null, string label = null, bool required = false, string description = null) where T : Form {
             form?.Fields.Add(new Checkbox(name, value) {
                 Label = label,
@@ -114,106 +220,299 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new CheckboxList(name, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T>(this T form, string name, params ListItem[] items) where T : Form {
             form?.Fields.Add(new CheckboxList(name, items));
             return form;
         }
 
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new CheckboxList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
             form?.Fields.Add(new CheckboxList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
             form?.Fields.Add(new CheckboxList(name, label).AddItems<CheckboxList, TEnum>());
             return form;
         }
 
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="defaultValue">An enum value indicating the default value whose corresponding item should be initially checked.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddCheckboxList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
             form?.Fields.Add(new CheckboxList(name, label).AddItems(defaultValue));
             return form;
         }
 
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new DropDownList(name, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T>(this T form, string name, params ListItem[] items) where T : Form {
             form?.Fields.Add(new DropDownList(name, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new DropDownList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
             form?.Fields.Add(new DropDownList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
             form?.Fields.Add(new DropDownList(name, label).AddItems<DropDownList, TEnum>());
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="defaultValue">An enum value indicating the default value whose corresponding item should be initially checked.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
             form?.Fields.Add(new DropDownList(name, label).AddItems(defaultValue));
             return form;
         }
 
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T>(this T form, string name, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new RadioList(name, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T>(this T form, string name, params ListItem[] items) where T : Form {
             form?.Fields.Add(new RadioList(name, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T>(this T form, string name, string label, IEnumerable<ListItem> items) where T : Form {
             form?.Fields.Add(new RadioList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
             form?.Fields.Add(new RadioList(name, label, items));
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T, TEnum>(this T form, string name, string label) where T : Form where TEnum : Enum {
             form?.Fields.Add(new RadioList(name, label).AddItems<RadioList, TEnum>());
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new radio list list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="defaultValue">An enum value indicating the default value whose corresponding item should be initially checked.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
             form?.Fields.Add(new RadioList(name, label).AddItems(defaultValue));
             return form;
         }
 
+        /// <summary>
+        /// Appends a new <c>button</c> button to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the button.</param>
+        /// <param name="label">The label of the button.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddButton<T>(this T form, string name, string label) where T : Form {
             form?.Fields.Add(new Button { Name = name, Label = label });
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new <c>reset</c> button to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the button.</param>
+        /// <param name="label">The label of the button.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddResetButton<T>(this T form, string name, string label) where T : Form {
             form?.Fields.Add(new ResetButton { Name = name, Label = label });
             return form;
         }
-
+        
+        /// <summary>
+        /// Appends a new <c>submit</c> button to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the button.</param>
+        /// <param name="label">The label of the button.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddSubmitButton<T>(this T form, string name, string label) where T : Form {
             form?.Fields.Add(new SubmitButton { Name = name, Label = label });
             return form;
