@@ -1,32 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+
   <PropertyGroup>
-    <TargetFrameworks>net45;net472</TargetFrameworks>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworks>netstandard2.0;net45;net472</TargetFrameworks>
     <BuildInParallel>false</BuildInParallel>
   </PropertyGroup>
   
   <PropertyGroup>
     <Version>1.0.0-beta002</Version>
+    <Company>Limbo</Company>
     <Authors>Anders Bjerner</Authors>
-    <Company>Skybrud.dk</Company>
+    <Copyright>Copyright © 2022</Copyright>
     <Description>C# models for describing forms.</Description>
-    <Copyright>Copyright © 2021</Copyright>
   </PropertyGroup>
 
+  <!-- Information for the NuGet package -->
   <PropertyGroup>
-    <PackageId>Skybrud.Forms</PackageId>
     <PackageTags>Skybrud, Forms</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <!--<PackageProjectUrl>https://packages.skybrud.dk/skybrud.forms/</PackageProjectUrl>-->
-    <PackageIconUrl>http://www.skybrud.dk/img/5431sk/icon/favicon.ico</PackageIconUrl>
+    <PackageIcon>Limbo.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/skybrud/Skybrud.Forms</RepositoryUrl>
   </PropertyGroup>
 
+  <!-- Include NuGet dependencies -->
   <ItemGroup>
-    <PackageReference Include="Skybrud.Essentials" Version="1.1.26" />
+    <PackageReference Include="Skybrud.Essentials" Version="1.1.35" />
+  </ItemGroup>
+  
+  <!-- Include package icon for NuGet -->
+  <ItemGroup>
+    <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
+  <!-- Generate XML documentation -->
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+    <!-- Run Skybrud.BuildTools (eg. build ZIP for release) -->  
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(ConfigurationName)'=='Release' AND '$(BuildTools)'=='1' AND '$(TargetFramework)'=='net472'">
     <Exec Command="&quot;$(ProjectDir)..\build\Skybrud.BuildTools.Tasks.exe&quot; &quot;postBuild&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectPath)&quot; &quot;$(TargetPath)&quot;" />
   </Target>
