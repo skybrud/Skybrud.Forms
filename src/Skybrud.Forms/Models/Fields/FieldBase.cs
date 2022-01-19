@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Skybrud.Forms.Models.Fields{
+namespace Skybrud.Forms.Models.Fields {
 
     /// <summary>
     /// Abstract class representing a field.
@@ -76,7 +76,7 @@ namespace Skybrud.Forms.Models.Fields{
             Type = type;
             Name = name;
         }
-        
+
         /// <summary>
         /// Initializes a new field with the specified <paramref name="type"/>, <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Skybrud.Forms.Models.Fields{
             Name = name;
             Label = label;
         }
-        
+
         /// <summary>
         /// Initializes a new field with the specified <paramref name="type"/>, <paramref name="name"/> and <paramref name="value"/>.
         /// </summary>

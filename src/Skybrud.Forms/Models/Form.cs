@@ -5,7 +5,7 @@ using Skybrud.Forms.Models.Fields;
 // ReSharper disable InconsistentNaming
 
 namespace Skybrud.Forms.Models {
-    
+
     /// <summary>
     /// Class representing a HTML <c>form</c> element.
     /// </summary>
@@ -51,14 +51,14 @@ namespace Skybrud.Forms.Models {
         #endregion
 
         #region Constructors
-        
+
         /// <summary>
         /// Initializes a new form with default options.
         /// </summary>
         public Form() {
             Fields = new List<FieldBase>();
         }
-        
+
         /// <summary>
         /// Initializes a new form based on the specified <paramref name="endpointUrl"/>.
         /// </summary>

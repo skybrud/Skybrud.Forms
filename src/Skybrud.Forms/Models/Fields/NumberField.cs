@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 namespace Skybrud.Forms.Models.Fields {
-    
+
     /// <summary>
     /// Class representing a HTML <c>number</c> field.
     /// </summary>
@@ -9,7 +9,7 @@ namespace Skybrud.Forms.Models.Fields {
     ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number</cref>
     /// </see>
     public class NumberField : InputField {
-        
+
         /// <summary>
         /// Gets the type of buttons based on <see cref="NumberField"/>.
         /// </summary>
@@ -56,12 +56,12 @@ namespace Skybrud.Forms.Models.Fields {
         #endregion
 
         #region Constructors
-        
+
         /// <summary>
         /// Initializes a new, empty <c>number</c> input field.
         /// </summary>
         public NumberField() : base(FieldType) { }
-        
+
         /// <summary>
         /// Initializes a new <c>email</c> input field with the specified <paramref name="name"/>.
         /// </summary>

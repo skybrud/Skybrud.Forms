@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 namespace Skybrud.Forms.Models.Fields {
-    
+
     /// <summary>
     /// Abstract class representing an <c>&lt;input&gt;</c> field.
     /// </summary>
@@ -50,20 +50,20 @@ namespace Skybrud.Forms.Models.Fields {
         #endregion
 
         #region Constructors
-        
+
         /// <summary>
         /// Initializes a new, empty input field.
         /// </summary>
         /// <param name="type">The type of the field.</param>
         protected InputField(string type) : base(type) { }
-        
+
         /// <summary>
         /// Initializes a new input field with the specified <paramref name="name"/>.
         /// </summary>
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         protected InputField(string type, string name) : base(type, name) { }
-        
+
         /// <summary>
         /// Initializes a new input field with the specified <paramref name="name"/>.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         protected InputField(string type, string name, string label) : base(type, name, label) { }
-        
+
         /// <summary>
         /// Initializes a new input field with the specified <paramref name="name"/> and <paramref name="value"/>.
         /// </summary>

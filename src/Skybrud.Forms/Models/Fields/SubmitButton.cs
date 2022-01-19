@@ -16,14 +16,14 @@
         /// Initializes a new submit button with default values.
         /// </summary>
         public SubmitButton() : base(FieldType) { }
-        
+
         /// <summary>
         /// Initializes a new submit button with the specified <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>
         /// <param name="name">The name of the button.</param>
         /// <param name="label">The label of the button.</param>
         public SubmitButton(string name, string label) : base(FieldType, name, label) { }
-        
+
         /// <summary>
         /// Initializes a new submit button with the specified <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>

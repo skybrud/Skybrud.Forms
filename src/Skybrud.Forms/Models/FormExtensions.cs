@@ -5,7 +5,7 @@ using Skybrud.Forms.Models.Fields;
 // ReSharper disable InconsistentNaming
 
 namespace Skybrud.Forms.Models {
-    
+
     /// <summary>
     /// Various extension methods for <see cref="Form"/> (and classes extending <see cref="Form"/>).
     /// </summary>
@@ -135,7 +135,7 @@ namespace Skybrud.Forms.Models {
             });
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list list of fields.
         /// </summary>
@@ -242,7 +242,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new CheckboxList(name, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -269,7 +269,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new CheckboxList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -283,7 +283,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new CheckboxList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -325,7 +325,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new DropDownList(name, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -338,7 +338,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new DropDownList(name, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -352,7 +352,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new DropDownList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -366,7 +366,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new DropDownList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -380,7 +380,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new DropDownList(name, label).AddItems<DropDownList, TEnum>());
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -408,7 +408,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new RadioList(name, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -421,7 +421,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new RadioList(name, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -435,7 +435,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new RadioList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new radio list list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -449,7 +449,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new RadioList(name, label, items));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new radio list list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -463,7 +463,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new RadioList(name, label).AddItems<RadioList, TEnum>());
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new radio list list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -491,7 +491,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new Button { Name = name, Label = label });
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new <c>reset</c> button to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -504,7 +504,7 @@ namespace Skybrud.Forms.Models {
             form?.Fields.Add(new ResetButton { Name = name, Label = label });
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new <c>submit</c> button to <paramref name="form"/>'s list of fields.
         /// </summary>

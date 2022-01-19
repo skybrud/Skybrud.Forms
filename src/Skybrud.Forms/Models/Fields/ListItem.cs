@@ -4,8 +4,8 @@ using Newtonsoft.Json;
 using Skybrud.Essentials.Reflection.Extensions;
 using Skybrud.Essentials.Strings.Extensions;
 
-namespace Skybrud.Forms.Models.Fields{
-    
+namespace Skybrud.Forms.Models.Fields {
+
     /// <summary>
     /// Class representing an item in a list based field.
     /// </summary>
@@ -56,7 +56,7 @@ namespace Skybrud.Forms.Models.Fields{
             Label = label;
             IsChecked = isChecked;
         }
-        
+
         /// <summary>
         /// Initializes a new item with the specified <paramref name="value"/> and <paramref name="label"/>.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Skybrud.Forms.Models.Fields{
             Value = value.ToString();
             Label = label;
         }
-        
+
         /// <summary>
         /// Initializes a new item with the specified <paramref name="value"/> and <paramref name="label"/>.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Skybrud.Forms.Models.Fields{
             Label = label;
             IsChecked = isChecked;
         }
-        
+
         /// <summary>
         /// Initializes a new item with the specified <paramref name="value"/> and <paramref name="label"/>.
         /// </summary>
@@ -88,7 +88,7 @@ namespace Skybrud.Forms.Models.Fields{
             Value = value;
             Label = label;
         }
-        
+
         /// <summary>
         /// Initializes a new item with the specified <paramref name="value"/> and <paramref name="label"/>.
         /// </summary>
@@ -111,7 +111,7 @@ namespace Skybrud.Forms.Models.Fields{
             Value = value.ToCamelCase();
             Label = value.HasCustomAttribute(out DescriptionAttribute result) ? result.Description : value.ToString();
         }
-        
+
         /// <summary>
         /// Initializes a new item based on the specified enum <paramref name="value"/>.
         /// </summary>

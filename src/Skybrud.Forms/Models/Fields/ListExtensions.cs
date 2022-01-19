@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Skybrud.Forms.Models.Fields {
-    
+
     /// <summary>
     /// Static class with various generic extension methods for <see cref="ListBase"/>.
     /// </summary>
@@ -33,7 +33,7 @@ namespace Skybrud.Forms.Models.Fields {
             list?.Items.Add(new ListItem(value, label, isChecked));
             return list;
         }
-        
+
         /// <summary>
         /// Appends a new item with the specified <paramref name="value"/> and <paramref name="label"/> to <paramref name="list"/>.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Skybrud.Forms.Models.Fields {
             list?.Items.Add(new ListItem(value, label));
             return list;
         }
-        
+
         /// <summary>
         /// Appends a new item with the specified <paramref name="value"/> and <paramref name="label"/> to <paramref name="list"/>.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Skybrud.Forms.Models.Fields {
             list?.Items.Add(new ListItem(value, label, isChecked));
             return list;
         }
-        
+
         /// <summary>
         /// Appends a new item with the specified <paramref name="value"/> and <paramref name="label"/> to <paramref name="list"/>.
         /// </summary>
@@ -73,7 +73,7 @@ namespace Skybrud.Forms.Models.Fields {
             list?.Items.Add(new ListItem(value, label));
             return list;
         }
-        
+
         /// <summary>
         /// Appends a new item with the specified <paramref name="value"/> and <paramref name="label"/> to <paramref name="list"/>.
         /// </summary>
@@ -99,7 +99,7 @@ namespace Skybrud.Forms.Models.Fields {
             list?.Items.Add(new ListItem(value));
             return list;
         }
-        
+
         /// <summary>
         /// Appends a new item based on the specified enum <paramref name="value"/> to <paramref name="list"/>.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Skybrud.Forms.Models.Fields {
 
             if (list == null) return null;
 
-            foreach (TEnum value in (TEnum[])Enum.GetValues(typeof(TEnum))) {
+            foreach (TEnum value in (TEnum[]) Enum.GetValues(typeof(TEnum))) {
                 list.Items.Add(new ListItem(value, Equals(value, defaultValue)));
 
             }

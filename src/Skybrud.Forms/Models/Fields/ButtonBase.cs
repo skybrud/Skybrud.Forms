@@ -1,12 +1,12 @@
 ﻿namespace Skybrud.Forms.Models.Fields {
-    
+
     /// <summary>
     /// Abstract class serving as a common base for button based fields like <see cref="Button"/>, <see cref="ResetButton"/> and <see cref="SubmitButton"/>.
     /// </summary>
     public abstract class ButtonBase : FieldBase {
 
         #region Constructors
-        
+
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/>.
         /// </summary>

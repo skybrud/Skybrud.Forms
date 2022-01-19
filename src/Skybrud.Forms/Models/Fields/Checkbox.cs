@@ -23,7 +23,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// Initializes a new <c>checkbox</c> field with default options.
         /// </summary>
         public Checkbox() : base("checkbox") { }
-        
+
         /// <summary>
         /// Initializes a new <c>checkbox</c> field with the specified <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Skybrud.Forms.Models.Fields {
             Name = name;
             Label = label;
         }
-        
+
         /// <summary>
         /// Initializes a new <c>checkbox</c> field with the specified <paramref name="name"/>, <paramref name="label"/>
         /// and <paramref name="value"/>.
@@ -46,7 +46,7 @@ namespace Skybrud.Forms.Models.Fields {
             Label = label;
             Value = value;
         }
-        
+
         /// <summary>
         /// Initializes a new <c>checkbox</c> field with the specified <paramref name="name"/>, <paramref name="label"/>
         /// and <paramref name="value"/>.

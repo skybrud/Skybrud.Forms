@@ -4,7 +4,7 @@
     /// Class representing a HTML <c>text</c> input field.
     /// </summary>
     public class TextField : InputField {
-        
+
         /// <summary>
         /// Gets the type of buttons based on <see cref="TextField"/>.
         /// </summary>
@@ -24,7 +24,7 @@
         public TextField(string name) : base(FieldType) {
             Name = name;
         }
-        
+
         /// <summary>
         /// Initializes a new <c>text</c> input field with the specified <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>
@@ -41,7 +41,7 @@
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        public TextField(string name, string label, object value) : base(FieldType)  {
+        public TextField(string name, string label, object value) : base(FieldType) {
             Name = name;
             Label = label;
             Value = value;

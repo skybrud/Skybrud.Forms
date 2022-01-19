@@ -29,7 +29,7 @@ namespace Skybrud.Forms.Models.Fields {
         protected ListBase(string type) : base(type, null) {
             Items = new List<ListItem>();
         }
-        
+
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/> nad <paramref name="name"/>.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Skybrud.Forms.Models.Fields {
             Label = label;
             Items = new List<ListItem>();
         }
-        
+
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/>, <paramref name="name"/>,
         /// <paramref name="label"/> and <paramref name="items"/>.
@@ -63,7 +63,7 @@ namespace Skybrud.Forms.Models.Fields {
             Label = label;
             Items = items?.ToList() ?? new List<ListItem>();
         }
-        
+
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/>, <paramref name="name"/>,
         /// <paramref name="label"/> and <paramref name="items"/>.
@@ -76,7 +76,7 @@ namespace Skybrud.Forms.Models.Fields {
             Label = label;
             Items = items?.ToList() ?? new List<ListItem>();
         }
-        
+
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/> and <paramref name="name"/>. The items will be based on the fields defined by the type of <paramref name="defaultItem"/>, and with <paramref name="defaultItem"/> preselected.
         /// </summary>
@@ -84,7 +84,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="defaultItem">The default item.</param>
         protected ListBase(string type, string name, Enum defaultItem) : base(type, name) {
-            
+
             Items = new List<ListItem>();
 
             foreach (Enum value in Enum.GetValues(defaultItem.GetType())) {
