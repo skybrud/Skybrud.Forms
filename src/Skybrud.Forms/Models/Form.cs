@@ -48,6 +48,12 @@ namespace Skybrud.Forms.Models {
         /// </summary>
         [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
         public List<FieldBase> Fields { get; set; }
+        
+        /// <summary>
+        /// Gets or sets a dictionary representing the labels associated with the form.
+        /// </summary>
+        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, string> Labels { get; set; }
 
         #endregion
 
@@ -58,6 +64,7 @@ namespace Skybrud.Forms.Models {
         /// </summary>
         public Form() {
             Fields = new List<FieldBase>();
+            Labels = new Dictionary<string, string>();
         }
 
         /// <summary>
@@ -67,6 +74,19 @@ namespace Skybrud.Forms.Models {
         public Form(string endpointUrl) {
             EndpointUrl = endpointUrl;
             Fields = new List<FieldBase>();
+            Labels = new Dictionary<string, string>();
+        }
+
+        #endregion
+
+        #region Member methods
+
+        /// <summary>
+        /// Returns whether the <see cref="Labels"/> property should be serialized when converting the form to a JSON string representation.
+        /// </summary>
+        /// <returns><c>true</c> if the <see cref="Labels"/> property should be serialized, otherwise, <c>false</c>.</returns>
+        public bool ShouldSerializeLabels() {
+            return Labels is { Count: > 0 };
         }
 
         #endregion

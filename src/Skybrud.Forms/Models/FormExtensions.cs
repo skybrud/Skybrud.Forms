@@ -518,6 +518,19 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+        /// <summary>
+        /// Adds a new label with the specified <paramref name="name"/> and <paramref name="value"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the label.</param>
+        /// <param name="value"></param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddLabel<T>(this T form, string name, string value) where T : Form {
+            form.Labels[name] = value;
+            return form;
+        }
+
     }
 
 }
