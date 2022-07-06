@@ -24,6 +24,7 @@ namespace Skybrud.Forms.Models {
         /// <see>
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-name</cref>
         /// </see>
+        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
