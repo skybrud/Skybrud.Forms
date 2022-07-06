@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Skybrud.Forms.Models.Fields;
 
 // ReSharper disable InconsistentNaming
@@ -220,16 +221,6 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
-
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
         /// </summary>
@@ -284,6 +275,39 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddCheckboxList<T, TItem>(this T form, string name, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new CheckboxList(name, items?.Select(function)));
+            return form;
+        }
+
+        /// <summary>
+        /// Appends a new checkbox list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddCheckboxList<T, TItem>(this T form, string name, string label, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new CheckboxList(name, label, items?.Select(function)));
+            return form;
+        }
+        
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
@@ -368,6 +392,39 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddDropDownList<T, TItem>(this T form, string name, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new DropDownList(name, items?.Select(function)));
+            return form;
+        }
+
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddDropDownList<T, TItem>(this T form, string name, string label, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new DropDownList(name, label, items?.Select(function)));
+            return form;
+        }
+
+        /// <summary>
         /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
@@ -447,6 +504,39 @@ namespace Skybrud.Forms.Models {
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddRadioList<T>(this T form, string name, string label, params ListItem[] items) where T : Form {
             form?.Fields.Add(new RadioList(name, label, items));
+            return form;
+        }
+
+        /// <summary>
+        /// Appends a new radio list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddRadioList<T, TItem>(this T form, string name, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new RadioList(name, items?.Select(function)));
+            return form;
+        }
+
+        /// <summary>
+        /// Appends a new radio list to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TItem">The type of the items.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="items">The items that should make up the índividual checkboxes of the list.</param>
+        /// <param name="function">At callback function used for converting each <typeparamref name="TItem"/> item to <see cref="ListItem"/>.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddRadioList<T, TItem>(this T form, string name, string label, IEnumerable<TItem> items, Func<TItem, ListItem> function) where T : Form {
+            if (form == null) return null;
+            form.Fields.Add(new RadioList(name, label, items?.Select(function)));
             return form;
         }
 
