@@ -24,21 +24,21 @@ namespace Skybrud.Forms.Models {
         /// <see>
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-name</cref>
         /// </see>
-        [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("name", Order = -99, NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the title of the form. If set to <c>null</c> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
-        [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("title", Order = -98, NullValueHandling = NullValueHandling.Ignore)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the URL to the endpoint behind the form. This is where the form data should be submitted to
         /// when doing asynchronous postbacks using JavaScript. If set to <c>null</c> (default), the property will be omitted when serializing the form to JSON.
         /// </summary>
-        [JsonProperty("endpointUrl", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("endpointUrl", Order = -50, NullValueHandling = NullValueHandling.Ignore)]
         public string EndpointUrl { get; set; }
 
         /// <summary>
@@ -46,13 +46,13 @@ namespace Skybrud.Forms.Models {
         /// list to which fields can be added.  If set to <c>null</c> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
-        [JsonProperty("fields", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fields", Order = 100, NullValueHandling = NullValueHandling.Ignore)]
         public List<FieldBase> Fields { get; set; }
         
         /// <summary>
         /// Gets or sets a dictionary representing the labels associated with the form.
         /// </summary>
-        [JsonProperty("labels", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("labels", Order = 150, NullValueHandling = NullValueHandling.Ignore)]
         public Dictionary<string, string> Labels { get; set; }
 
         #endregion
