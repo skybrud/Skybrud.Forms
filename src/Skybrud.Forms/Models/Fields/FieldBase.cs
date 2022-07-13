@@ -47,6 +47,13 @@ namespace Skybrud.Forms.Models.Fields {
         public bool IsRequired { get; set; }
 
         /// <summary>
+        /// Gets or sets whether the field is disabled.
+        /// </summary>
+        /// <remarks>If set to <c>false</c>, this property will be omitted when serializing the field to JSON.</remarks>
+        [JsonProperty("disabled", Order = -94, DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public bool IsDisabled { get; set; }
+
+        /// <summary>
         /// Gets or sets the value of the field.
         /// </summary>
         /// <remarks>If set to <c>null</c>, this property will be omitted when serializing the field to JSON.</remarks>

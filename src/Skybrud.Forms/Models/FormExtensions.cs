@@ -71,14 +71,16 @@ namespace Skybrud.Forms.Models {
         /// <param name="placeholder">The placeholder text of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
-        public static T AddEmailField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, bool required = false) where T : Form {
+        public static T AddEmailField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new EmailField {
                 Name = name,
                 Value = value,
                 Placeholder = placeholder,
                 Label = label,
-                IsRequired = required
+                IsRequired = required,
+                IsDisabled = disabled
             });
             return form;
         }
@@ -95,8 +97,9 @@ namespace Skybrud.Forms.Models {
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="size">The size of the input field.</param>
         /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
-        public static T AddTextField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false) where T : Form {
+        public static T AddTextField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TextField {
                 Name = name,
                 Value = value,
@@ -104,7 +107,8 @@ namespace Skybrud.Forms.Models {
                 Label = label,
                 Pattern = pattern,
                 Size = size,
-                IsRequired = required
+                IsRequired = required,
+                IsDisabled = disabled
             });
             return form;
         }
