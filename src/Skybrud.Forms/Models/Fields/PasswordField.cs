@@ -1,7 +1,13 @@
 ﻿namespace Skybrud.Forms.Models.Fields {
 
+    /// <summary>
+    /// Class representing a HTML <c>password</c> input field.
+    /// </summary>
     public class PasswordField : InputField {
 
+        /// <summary>
+        /// Gets the type of buttons based on <see cref="TextField"/>.
+        /// </summary>
         protected const string FieldType = "password";
 
         #region Constructors
