@@ -677,6 +677,19 @@ namespace Skybrud.Forms.Models {
             return form;
         }
 
+        /// <summary>
+        /// Appends a new <c>caption</c> field to <paramref name="form"/>'s list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="title">The title of the caption field.</param>
+        /// <param name="description">The description of the caption field.</param>
+        /// <returns></returns>
+        public static T AddCaption<T>(this T form, string title = null, string description = null) where T : Form {
+            form?.Fields.Add(new Caption(title, description));
+            return form;
+        }
+
     }
 
 }
