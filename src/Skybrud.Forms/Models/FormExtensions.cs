@@ -114,6 +114,32 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
+        /// Appends a new <c>password</c> input field to <paramref name="form"/>'s list list of fields.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="value">The value of the field.</param>
+        /// <param name="placeholder">The placeholder text of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="size">The size of the input field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddPasswordField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
+            form?.Fields.Add(new PasswordField {
+                Name = name,
+                Value = value,
+                Placeholder = placeholder,
+                Label = label,
+                Size = size,
+                IsRequired = required,
+                IsDisabled = disabled
+            });
+            return form;
+        }
+
+        /// <summary>
         /// Appends a new <c>&lt;textarea&gt;</c> field to <paramref name="form"/>'s list list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
