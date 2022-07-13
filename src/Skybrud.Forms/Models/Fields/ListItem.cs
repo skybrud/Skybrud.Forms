@@ -16,19 +16,19 @@ namespace Skybrud.Forms.Models.Fields {
         /// <summary>
         /// Gets or sets the value of the item.
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value", Order = -99)]
         public string Value { get; set; }
 
         /// <summary>
         /// Gets or sets the label of the item.
         /// </summary>
-        [JsonProperty("label")]
+        [JsonProperty("label", Order = -98)]
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or sets whether the item should be checked.
         /// </summary>
-        [JsonProperty("checked")]
+        [JsonProperty("checked", Order = 99)]
         public bool IsChecked { get; set; }
 
         #endregion
@@ -41,6 +41,16 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
         public ListItem(int value, string label) {
+            Value = value.ToString();
+            Label = label;
+        }
+
+        /// <summary>
+        /// Initializes a new item with the specified <paramref name="value"/> and <paramref name="label"/>.
+        /// </summary>
+        /// <param name="value">The value of the item.</param>
+        /// <param name="label">The label of the item.</param>
+        public ListItem(long value, string label) {
             Value = value.ToString();
             Label = label;
         }
