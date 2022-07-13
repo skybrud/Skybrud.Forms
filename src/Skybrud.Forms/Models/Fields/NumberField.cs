@@ -63,7 +63,7 @@ namespace Skybrud.Forms.Models.Fields {
         public NumberField() : base(FieldType) { }
 
         /// <summary>
-        /// Initializes a new <c>email</c> input field with the specified <paramref name="name"/>.
+        /// Initializes a new <c>number</c> input field with the specified <paramref name="name"/>.
         /// </summary>
         /// <param name="name">The name of the field.</param>
         public NumberField(string name) : base(FieldType) {

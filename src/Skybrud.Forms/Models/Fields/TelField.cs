@@ -13,7 +13,7 @@
         #region Constructors
 
         /// <summary>
-        /// Initializes a new, empty <c>text</c> input field.
+        /// Initializes a new, empty <c>tel</c> input field.
         /// </summary>
         public TelField() : base(FieldType) { }
 
