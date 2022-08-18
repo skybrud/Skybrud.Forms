@@ -153,7 +153,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDateField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
-            form?.Fields.Add(new PasswordField {
+            form?.Fields.Add(new DateField {
                 Name = name,
                 Value = value,
                 Placeholder = placeholder,
