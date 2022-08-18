@@ -13,7 +13,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <summary>
         /// Gets the type of the field.
         /// </summary>
-        [JsonProperty("type", Order = -99)]
+        [JsonProperty("type", Order = -375)]
         public string Type { get; }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// HTML element.
         /// </summary>
         /// <remarks>If set to <c>null</c>, this property will be omitted when serializing the field to JSON.</remarks>
-        [JsonProperty("name", Order = -98, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("name", Order = -350, NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
@@ -29,28 +29,28 @@ namespace Skybrud.Forms.Models.Fields {
         /// <c>&lt;label&gt;</c> element wrapping the field.
         /// </summary>
         /// <remarks>If set to <c>null</c>, this property will be omitted when serializing the field to JSON.</remarks>
-        [JsonProperty("label", Order = -97, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("label", Order = -325, NullValueHandling = NullValueHandling.Ignore)]
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or sets the description of the field.
         /// </summary>
         /// <remarks>If set to <c>null</c>, this property will be omitted when serializing the field to JSON.</remarks>
-        [JsonProperty("description", Order = -96, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("description", Order = -300, NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or sets whether the field is required.
         /// </summary>
         /// <remarks>If set to <c>false</c>, this property will be omitted when serializing the field to JSON.</remarks>
-        [JsonProperty("required", Order = -95, DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonProperty("required", Order = -275, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool IsRequired { get; set; }
 
         /// <summary>
         /// Gets or sets whether the field is disabled.
         /// </summary>
         /// <remarks>If set to <c>false</c>, this property will be omitted when serializing the field to JSON.</remarks>
-        [JsonProperty("disabled", Order = -94, DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonProperty("disabled", Order = -250, DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool IsDisabled { get; set; }
 
         /// <summary>
