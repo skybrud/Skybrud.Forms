@@ -17,7 +17,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <summary>
         /// GHets or sets the title.
         /// </summary>
-        [JsonProperty("title")]
+        [JsonProperty("title", Order = -301)]
         public string Title { get; set; }
 
         #endregion
