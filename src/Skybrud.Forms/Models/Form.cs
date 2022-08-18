@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Skybrud.Forms.Models.Fields;
 
@@ -92,11 +93,29 @@ namespace Skybrud.Forms.Models {
         #endregion
 
         #region Static methods
+        
+        /// <summary>
+        /// Initializes a new form with default options.
+        /// </summary>
+        /// <returns>An instance of <see cref="Form"/>.</returns>
+        public static Form Create() {
+            return new Form();
+        }
+
+        /// <summary>
+        /// Initializes a new form based on the specified <paramref name="endpointUrl"/>.
+        /// </summary>
+        /// <param name="endpointUrl">The endpoint URL.</param>
+        /// <returns>An instance of <see cref="Form"/>.</returns>
+        public static Form Create(string endpointUrl) {
+            return new Form(endpointUrl);
+        }
 
         /// <summary>
         /// Initializes a new form with default options.
         /// </summary>
         /// <returns>An instance of <see cref="Form"/>.</returns>
+        [Obsolete("Use 'Create' method instead.")]
         public static Form New() {
             return new Form();
         }
@@ -106,6 +125,7 @@ namespace Skybrud.Forms.Models {
         /// </summary>
         /// <param name="endpointUrl">The endpoint URL.</param>
         /// <returns>An instance of <see cref="Form"/>.</returns>
+        [Obsolete("Use 'Create' method instead.")]
         public static Form New(string endpointUrl) {
             return new Form(endpointUrl);
         }
