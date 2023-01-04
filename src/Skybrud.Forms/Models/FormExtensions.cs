@@ -179,8 +179,9 @@ namespace Skybrud.Forms.Models {
         /// <param name="size">The size of the textarea.</param>
         /// <param name="rows">The textarea's height in rows.</param>
         /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
-        public static T AddTextarea<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, int? rows = null, bool required = false) where T : Form {
+        public static T AddTextarea<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, int? rows = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TextArea {
                 Name = name,
                 Value = value,
@@ -189,7 +190,8 @@ namespace Skybrud.Forms.Models {
                 Pattern = pattern,
                 Size = size,
                 Rows = rows,
-                IsRequired = required
+                IsRequired = required,
+                IsDisabled = disabled
             });
             return form;
         }
@@ -206,8 +208,9 @@ namespace Skybrud.Forms.Models {
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="size">The size of the input field.</param>
         /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
-        public static T AddTelField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false) where T : Form {
+        public static T AddTelField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TelField {
                 Name = name,
                 Value = value,
@@ -215,7 +218,8 @@ namespace Skybrud.Forms.Models {
                 Label = label,
                 Pattern = pattern,
                 Size = size,
-                IsRequired = required
+                IsRequired = required,
+                IsDisabled = disabled
             });
             return form;
         }
@@ -235,11 +239,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="step">The value for the input field's <c>step</c> attribute.</param>
         /// <param name="size">The size of the input field.</param>
         /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         /// <see>
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number</cref>
         /// </see>
-        public static T AddNumberField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? min = null, int? max = null, int? step = null, int? size = null, bool required = false) where T : Form {
+        public static T AddNumberField<T>(this T form, string name, string value = null, string placeholder = null, string label = null, string pattern = null, int? min = null, int? max = null, int? step = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new NumberField {
                 Name = name,
                 Value = value,
@@ -250,7 +255,8 @@ namespace Skybrud.Forms.Models {
                 Max = max,
                 Step = step,
                 Size = size,
-                IsRequired = required
+                IsRequired = required,
+                IsDisabled = disabled
             });
             return form;
         }
@@ -263,17 +269,19 @@ namespace Skybrud.Forms.Models {
         /// <param name="name">The name of the field.</param>
         /// <param name="value">The value of the field.</param>
         /// <param name="label">The label of the field.</param>
-        /// <param name="required">Whether the field is required.</param>
         /// <param name="description">The description of the field.</param>
+        /// <param name="required">Whether the field is required.</param>
+        /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         /// <see>
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox</cref>
         /// </see>
-        public static T AddCheckbox<T>(this T form, string name, string value = null, string label = null, bool required = false, string description = null) where T : Form {
+        public static T AddCheckbox<T>(this T form, string name, string value = null, string label = null, string description = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new Checkbox(name, value) {
                 Label = label,
+                Description = description,
                 IsRequired = required,
-                Description = description
+                IsDisabled = disabled
             });
             return form;
         }
