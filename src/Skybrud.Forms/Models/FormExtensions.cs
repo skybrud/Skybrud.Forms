@@ -38,7 +38,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends the specified <paramref name="field"/> to <paramref name="form"/>'s list list of fields.
+        /// Appends the specified <paramref name="field"/> to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -50,7 +50,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>hidden</c> input field field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>hidden</c> input field field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -63,7 +63,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>email</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>email</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -87,7 +87,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>text</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>text</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -115,7 +115,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>password</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>password</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -141,7 +141,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>date</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>date</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -167,7 +167,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>&lt;textarea&gt;</c> field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>&lt;textarea&gt;</c> field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -197,7 +197,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -225,7 +225,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list list of fields.
+        /// Appends a new <c>tel</c> input field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
