@@ -25,15 +25,27 @@ namespace Skybrud.Forms.Models {
         /// <see>
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-name</cref>
         /// </see>
-        [JsonProperty("name", Order = -200, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("name", Order = -300, NullValueHandling = NullValueHandling.Ignore)]
         public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the title of the form. If set to <see langword="null"/> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
-        [JsonProperty("title", Order = -175, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("title", Order = -275, NullValueHandling = NullValueHandling.Ignore)]
         public string? Title { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value for the <c>method</c> HTML attribute.
+        /// </summary>
+        [JsonProperty("method", Order = -200, NullValueHandling = NullValueHandling.Ignore)]
+        public string? Method { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value for the <c>action</c> HTML attribute.
+        /// </summary>
+        [JsonProperty("action", Order = -175, NullValueHandling = NullValueHandling.Ignore)]
+        public string? Action { get; set; }
 
         /// <summary>
         /// Gets or sets the URL to the endpoint behind the form. This is where the form data should be submitted to
