@@ -8,14 +8,14 @@ At [**@limbo-works**](https://github.com/limbo-works), we're typically building 
 
 ## Installation
 
-The package is only available via [NuGet](https://www.nuget.org/packages/Skybrud.Forms/1.0.0-beta007) - you can install the package in your project using either the .NET CLI:
+The package is only available via [NuGet](https://www.nuget.org/packages/Skybrud.Forms/1.0.0-beta008) - you can install the package in your project using either the .NET CLI:
 
 ```
-dotnet add package Skybrud.Forms --version 1.0.0-beta007
+dotnet add package Skybrud.Forms --version 1.0.0-beta008
 ```
 
 or the NuGet Package Manager:
 
 ```
-Install-Package Skybrud.Forms -Version 1.0.0-beta007
+Install-Package Skybrud.Forms -Version 1.0.0-beta008
 ```
