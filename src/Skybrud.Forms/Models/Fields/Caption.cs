@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 namespace Skybrud.Forms.Models.Fields {
-    
+
     /// <summary>
     /// Class representing a caption style field with a title and/or description.
     /// </summary>

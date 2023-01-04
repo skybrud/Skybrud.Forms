@@ -372,7 +372,7 @@ namespace Skybrud.Forms.Models {
             form.Fields.Add(new CheckboxList(name, label, items?.Select(function)));
             return form;
         }
-        
+
         /// <summary>
         /// Appends a new checkbox list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>

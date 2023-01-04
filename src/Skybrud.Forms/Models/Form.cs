@@ -49,7 +49,7 @@ namespace Skybrud.Forms.Models {
         /// </summary>
         [JsonProperty("fields", Order = 100, NullValueHandling = NullValueHandling.Ignore)]
         public List<FieldBase> Fields { get; set; }
-        
+
         /// <summary>
         /// Gets or sets a dictionary representing the labels associated with the form.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Skybrud.Forms.Models {
         #endregion
 
         #region Static methods
-        
+
         /// <summary>
         /// Initializes a new form with default options.
         /// </summary>
