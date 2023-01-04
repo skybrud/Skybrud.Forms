@@ -16,7 +16,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, int value, string label) where T : ListBase {
             list?.Items.Add(new ListItem(value, label));
             return list;
@@ -30,7 +30,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
         /// <param name="isChecked">Whether the item should initially be checked/selected.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, int value, string label, bool isChecked) where T : ListBase {
             list?.Items.Add(new ListItem(value, label, isChecked));
             return list;
@@ -43,7 +43,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, Guid value, string label) where T : ListBase {
             list?.Items.Add(new ListItem(value, label));
             return list;
@@ -57,7 +57,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
         /// <param name="isChecked">Whether the item should initially be checked/selected.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, Guid value, string label, bool isChecked) where T : ListBase {
             list?.Items.Add(new ListItem(value, label, isChecked));
             return list;
@@ -70,7 +70,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, string value, string label) where T : ListBase {
             list?.Items.Add(new ListItem(value, label));
             return list;
@@ -84,7 +84,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="value">The value of the item.</param>
         /// <param name="label">The label of the item.</param>
         /// <param name="isChecked">Whether the item should initially be checked/selected.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, string value, string label, bool isChecked) where T : ListBase {
             list?.Items.Add(new ListItem(value, label, isChecked));
             return list;
@@ -96,7 +96,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <typeparam name="T">The type of the list.</typeparam>
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="value">The enum value.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, Enum value) where T : ListBase {
             list?.Items.Add(new ListItem(value));
             return list;
@@ -109,7 +109,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="value">The enum value.</param>
         /// <param name="isChecked">Whether the item should initially be checked/selected.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItem<T>(this T list, Enum value, bool isChecked) where T : ListBase {
             list?.Items.Add(new ListItem(value, isChecked));
             return list;
@@ -121,7 +121,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <typeparam name="T">The type of the list.</typeparam>
         /// <typeparam name="TEnum">The enum type.</typeparam>
         /// <param name="list">The list to which the item should be added.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItems<T, TEnum>(this T list) where T : ListBase where TEnum : Enum {
 
             if (list == null) return null;
@@ -142,7 +142,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <typeparam name="TEnum">The enum type.</typeparam>
         /// <param name="list">The list to which the item should be added.</param>
         /// <param name="defaultValue">Indicates the default value where the corresponding should be checked/selected.</param>
-        /// <returns><paramref name="list"/> - which may be used for mehtod chaining.</returns>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
         public static T AddItems<T, TEnum>(this T list, TEnum defaultValue) where T : ListBase where TEnum : Enum {
 
             if (list == null) return null;

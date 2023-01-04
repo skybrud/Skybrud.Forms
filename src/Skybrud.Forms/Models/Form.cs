@@ -19,7 +19,7 @@ namespace Skybrud.Forms.Models {
 
         /// <summary>
         /// Gets or sets the name of the form. The value must not be the empty string, and must be unique among the
-        /// form elements in the forms collection that it is in, if any. If set to <c>null</c> (default), the property
+        /// form elements in the forms collection that it is in, if any. If set to <see langword="null"/> (default), the property
         /// will be omitted when serializing the form to JSON.
         /// </summary>
         /// <see>
@@ -29,7 +29,7 @@ namespace Skybrud.Forms.Models {
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the title of the form. If set to <c>null</c> (default), the property will be omitted when
+        /// Gets or sets the title of the form. If set to <see langword="null"/> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
         [JsonProperty("title", Order = -175, NullValueHandling = NullValueHandling.Ignore)]
@@ -37,14 +37,14 @@ namespace Skybrud.Forms.Models {
 
         /// <summary>
         /// Gets or sets the URL to the endpoint behind the form. This is where the form data should be submitted to
-        /// when doing asynchronous postbacks using JavaScript. If set to <c>null</c> (default), the property will be omitted when serializing the form to JSON.
+        /// when doing asynchronous postbacks using JavaScript. If set to <see langword="null"/> (default), the property will be omitted when serializing the form to JSON.
         /// </summary>
         [JsonProperty("endpointUrl", Order = -150, NullValueHandling = NullValueHandling.Ignore)]
         public string EndpointUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the list of fields making up the form. By default, the property is initialized with an empty
-        /// list to which fields can be added.  If set to <c>null</c> (default), the property will be omitted when
+        /// list to which fields can be added.  If set to <see langword="null"/> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
         [JsonProperty("fields", Order = 100, NullValueHandling = NullValueHandling.Ignore)]
@@ -85,7 +85,7 @@ namespace Skybrud.Forms.Models {
         /// <summary>
         /// Returns whether the <see cref="Labels"/> property should be serialized when converting the form to a JSON string representation.
         /// </summary>
-        /// <returns><c>true</c> if the <see cref="Labels"/> property should be serialized, otherwise, <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if the <see cref="Labels"/> property should be serialized, otherwise, <see langword="false"/>.</returns>
         public bool ShouldSerializeLabels() {
             return Labels is { Count: > 0 };
         }
