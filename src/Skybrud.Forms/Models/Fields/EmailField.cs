@@ -30,7 +30,7 @@
         /// </summary>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        public EmailField(string name, string label) : base(FieldType) {
+        public EmailField(string name, string? label) : base(FieldType) {
             Name = name;
             Label = label;
         }
@@ -41,7 +41,7 @@
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        public EmailField(string name, string label, object value) : base(FieldType) {
+        public EmailField(string name, string? label, object? value) : base(FieldType) {
             Name = name;
             Label = label;
             Value = value;

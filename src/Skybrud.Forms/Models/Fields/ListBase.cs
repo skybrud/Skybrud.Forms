@@ -16,7 +16,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// Gets or sets the placeholder text of the field.
         /// </summary>
         [JsonProperty("placeholder", NullValueHandling = NullValueHandling.Ignore)]
-        public string Placeholder { get; set; }
+        public string? Placeholder { get; set; }
 
         /// <summary>
         /// Gets or sets the items making up the list.
@@ -41,7 +41,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
-        protected ListBase(string type, string name) : base(type, name) {
+        protected ListBase(string type, string? name) : base(type, name) {
             Items = new List<ListItem>();
         }
 
@@ -52,7 +52,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        protected ListBase(string type, string name, string label) : base(type, name) {
+        protected ListBase(string type, string? name, string? label) : base(type, name) {
             Label = label;
             Items = new List<ListItem>();
         }
@@ -65,7 +65,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="items">The items that should make up the field.</param>
-        protected ListBase(string type, string name, string label, IEnumerable<ListItem> items) : base(type, name) {
+        protected ListBase(string type, string? name, string? label, IEnumerable<ListItem>? items) : base(type, name) {
             Label = label;
             Items = items?.ToList() ?? new List<ListItem>();
         }
@@ -78,7 +78,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="items">The items that should make up the field.</param>
-        protected ListBase(string type, string name, string label, params ListItem[] items) : base(type, name) {
+        protected ListBase(string type, string? name, string? label, params ListItem[] items) : base(type, name) {
             Label = label;
             Items = items?.ToList() ?? new List<ListItem>();
         }
@@ -89,7 +89,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         /// <param name="defaultItem">The default item.</param>
-        protected ListBase(string type, string name, Enum defaultItem) : base(type, name) {
+        protected ListBase(string type, string? name, Enum defaultItem) : base(type, name) {
 
             Items = new List<ListItem>();
 
@@ -97,6 +97,18 @@ namespace Skybrud.Forms.Models.Fields {
                 Items.Add(new ListItem(value, Equals(value, defaultItem)));
             }
 
+        }
+
+        #endregion
+
+        #region Member methods
+
+        internal static List<ListItem> GetItems<TEnum>() where TEnum : Enum {
+            return (from value in (TEnum[]) Enum.GetValues(typeof(TEnum)) select new ListItem(value)).ToList();
+        }
+
+        internal static List<ListItem> GetItems<TEnum>(TEnum? defaultValue) where TEnum : Enum {
+            return (from value in (TEnum[]) Enum.GetValues(typeof(TEnum)) select new ListItem(value, Equals(value, defaultValue))).ToList();
         }
 
         #endregion

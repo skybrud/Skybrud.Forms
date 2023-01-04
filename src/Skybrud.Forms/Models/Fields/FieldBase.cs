@@ -22,7 +22,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
         [JsonProperty("id", Order = -375, NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the field. This will typically be the value for the <c>name</c> attribute of the
@@ -30,7 +30,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
         [JsonProperty("name", Order = -350, NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the label of the field. This will typically be a user-friendly name of the field - eg. via a
@@ -38,14 +38,14 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
         [JsonProperty("label", Order = -325, NullValueHandling = NullValueHandling.Ignore)]
-        public string Label { get; set; }
+        public string? Label { get; set; }
 
         /// <summary>
         /// Gets or sets the description of the field.
         /// </summary>
         /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
         [JsonProperty("description", Order = -300, NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Gets or sets whether the field is required.
@@ -66,7 +66,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore, Order = 500)]
-        public object Value { get; set; }
+        public object? Value { get; set; }
 
         #endregion
 
@@ -86,7 +86,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
-        protected FieldBase(string type, string name) {
+        protected FieldBase(string type, string? name) {
             if (string.IsNullOrWhiteSpace(type)) throw new ArgumentNullException(nameof(type));
             Type = type;
             Name = name;
@@ -98,7 +98,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        protected FieldBase(string type, string name, string label) {
+        protected FieldBase(string type, string? name, string? label) {
             if (string.IsNullOrWhiteSpace(type)) throw new ArgumentNullException(nameof(type));
             Type = type;
             Name = name;
@@ -112,7 +112,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        protected FieldBase(string type, string name, string label, object value) {
+        protected FieldBase(string type, string? name, string? label, object? value) {
             if (string.IsNullOrWhiteSpace(type)) throw new ArgumentNullException(nameof(type));
             Type = type;
             Name = name;

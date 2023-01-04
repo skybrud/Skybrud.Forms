@@ -9,7 +9,7 @@ namespace Skybrud.Forms.Models {
     public partial class FormExtensions {
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -24,8 +24,8 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T>(this T? form, string name, string? label = null, IEnumerable<ListItem>? items = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
-            form?.Fields.Add(new DropDownList(name, items) {
+        public static T? AddRadioList<T>(this T? form, string name, string? label = null, IEnumerable<ListItem>? items = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
+            form?.Fields.Add(new RadioList(name, items) {
                 Id = id,
                 Label = label,
                 Description = description,
@@ -38,7 +38,7 @@ namespace Skybrud.Forms.Models {
         }
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <param name="form">The form.</param>
@@ -53,12 +53,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="items">The items that should make up the índividual items of the list.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false, params ListItem[] items) where T : Form {
-            return AddDropDownList(form, name, label, items, description, placeholder, value, id, required, disabled);
+        public static T? AddRadioList<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false, params ListItem[] items) where T : Form {
+            return AddRadioList(form, name, label, items, description, placeholder, value, id, required, disabled);
         }
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <typeparam name="TItem">The type of the items.</typeparam>
@@ -75,12 +75,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T, TItem>(this T? form, string name, IEnumerable<TItem>? items, Func<TItem, ListItem> function, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
-            return AddDropDownList(form, name, label, items?.Select(function), description, placeholder, value, id, required, disabled);
+        public static T? AddRadioList<T, TItem>(this T? form, string name, IEnumerable<TItem>? items, Func<TItem, ListItem> function, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
+            return AddRadioList(form, name, label, items?.Select(function), description, placeholder, value, id, required, disabled);
         }
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <typeparam name="TItem">The type of the items.</typeparam>
@@ -97,12 +97,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T, TItem>(this T? form, string name, string? label, IEnumerable<TItem>? items, Func<TItem, ListItem> function, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
-            return AddDropDownList(form, name, label, items?.Select(function), description, placeholder, value, id, required, disabled);
+        public static T? AddRadioList<T, TItem>(this T? form, string name, string? label, IEnumerable<TItem>? items, Func<TItem, ListItem> function, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool? required = false, bool? disabled = false) where T : Form {
+            return AddRadioList(form, name, label, items?.Select(function), description, placeholder, value, id, required, disabled);
         }
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
@@ -117,12 +117,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T, TEnum>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form where TEnum : Enum {
-            return AddDropDownList(form, name, label, ListBase.GetItems<TEnum>(), description, placeholder, value, id, required, disabled);
+        public static T? AddRadioList<T, TEnum>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form where TEnum : Enum {
+            return AddRadioList(form, name, label, ListBase.GetItems<TEnum>(), description, placeholder, value, id, required, disabled);
         }
 
         /// <summary>
-        /// Appends a new drop-down list field to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// Appends a new radio list field to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
         /// </summary>
         /// <typeparam name="T">The type of the form.</typeparam>
         /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
@@ -138,8 +138,8 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDropDownList<T, TEnum>(this T? form, string name, string? label = null, TEnum? defaultValue = default, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form where TEnum : Enum {
-            return AddDropDownList(form, name, label, ListBase.GetItems(defaultValue), description, placeholder, value, id, required, disabled);
+        public static T? AddRadioList<T, TEnum>(this T? form, string name, string? label = null, TEnum? defaultValue = default, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form where TEnum : Enum {
+            return AddRadioList(form, name, label, ListBase.GetItems(defaultValue), description, placeholder, value, id, required, disabled);
         }
 
     }

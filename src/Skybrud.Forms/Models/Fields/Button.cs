@@ -20,7 +20,7 @@
         /// <summary>
         /// Initializes a new button with the specified <paramref name="name"/> and <paramref name="label"/>.
         /// </summary>
-        public Button(string name, string label) : base(FieldType, name, label) { }
+        public Button(string name, string? label) : base(FieldType, name, label) { }
 
         /// <summary>
         /// Initializes a new button with the specified <paramref name="name"/>, <paramref name="label"/> and <paramref name="value"/>.
@@ -28,7 +28,7 @@
         /// <param name="name">The name of the button.</param>
         /// <param name="label">The label of the button.</param>
         /// <param name="value">The value of the button.</param>
-        public Button(string name, string label, object value) : base(FieldType, name, label, value) { }
+        public Button(string name, string? label, object? value) : base(FieldType, name, label, value) { }
 
         #endregion
 

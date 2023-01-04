@@ -30,7 +30,7 @@
         /// </summary>
         /// <param name="name">The name of the field.</param>
         /// <param name="value">The value of the field.</param>
-        public HiddenField(string name, object value) : base(FieldType) {
+        public HiddenField(string name, object? value) : base(FieldType) {
             Name = name;
             Value = value;
         }

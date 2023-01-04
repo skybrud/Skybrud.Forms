@@ -18,7 +18,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// GHets or sets the title.
         /// </summary>
         [JsonProperty("title", Order = -301)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         #endregion
 
@@ -33,7 +33,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// Initializes a new instance based on the specified <paramref name="title"/>.
         /// </summary>
         /// <param name="title">The title.</param>
-        public Caption(string title) : base(FieldType) {
+        public Caption(string? title) : base(FieldType) {
             Title = title;
         }
 
@@ -42,7 +42,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <param name="title">The title.</param>
         /// <param name="description">The description.</param>
-        public Caption(string title, string description) : base(FieldType) {
+        public Caption(string? title, string? description) : base(FieldType) {
             Title = title;
             Description = description;
         }

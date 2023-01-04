@@ -20,7 +20,7 @@
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        protected ButtonBase(string type, string name, string label) : base(type, name, label) { }
+        protected ButtonBase(string type, string name, string? label) : base(type, name, label) { }
 
         /// <summary>
         /// Initializes a new instance with the specified <paramref name="type"/>, <paramref name="name"/>,
@@ -30,7 +30,7 @@
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        protected ButtonBase(string type, string name, string label, object value) : base(type, name, label, value) { }
+        protected ButtonBase(string type, string name, string? label, object? value) : base(type, name, label, value) { }
 
         #endregion
 

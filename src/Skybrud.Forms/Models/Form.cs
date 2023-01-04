@@ -26,21 +26,21 @@ namespace Skybrud.Forms.Models {
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-name</cref>
         /// </see>
         [JsonProperty("name", Order = -200, NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the title of the form. If set to <see langword="null"/> (default), the property will be omitted when
         /// serializing the form to JSON.
         /// </summary>
         [JsonProperty("title", Order = -175, NullValueHandling = NullValueHandling.Ignore)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Gets or sets the URL to the endpoint behind the form. This is where the form data should be submitted to
         /// when doing asynchronous postbacks using JavaScript. If set to <see langword="null"/> (default), the property will be omitted when serializing the form to JSON.
         /// </summary>
         [JsonProperty("endpointUrl", Order = -150, NullValueHandling = NullValueHandling.Ignore)]
-        public string EndpointUrl { get; set; }
+        public string? EndpointUrl { get; set; }
 
         /// <summary>
         /// Gets or sets the list of fields making up the form. By default, the property is initialized with an empty
@@ -72,7 +72,7 @@ namespace Skybrud.Forms.Models {
         /// Initializes a new form based on the specified <paramref name="endpointUrl"/>.
         /// </summary>
         /// <param name="endpointUrl">The endpoint URL.</param>
-        public Form(string endpointUrl) {
+        public Form(string? endpointUrl) {
             EndpointUrl = endpointUrl;
             Fields = new List<FieldBase>();
             Labels = new Dictionary<string, string>();
@@ -107,7 +107,7 @@ namespace Skybrud.Forms.Models {
         /// </summary>
         /// <param name="endpointUrl">The endpoint URL.</param>
         /// <returns>An instance of <see cref="Form"/>.</returns>
-        public static Form Create(string endpointUrl) {
+        public static Form Create(string? endpointUrl) {
             return new Form(endpointUrl);
         }
 
@@ -126,7 +126,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="endpointUrl">The endpoint URL.</param>
         /// <returns>An instance of <see cref="Form"/>.</returns>
         [Obsolete("Use 'Create' method instead.")]
-        public static Form New(string endpointUrl) {
+        public static Form New(string? endpointUrl) {
             return new Form(endpointUrl);
         }
 

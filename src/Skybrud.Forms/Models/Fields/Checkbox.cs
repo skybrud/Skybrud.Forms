@@ -29,7 +29,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// </summary>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        public Checkbox(string name, string label) : base("checkbox") {
+        public Checkbox(string name, string? label) : base("checkbox") {
             Name = name;
             Label = label;
         }
@@ -41,7 +41,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        public Checkbox(string name, string label, object value) : base("checkbox") {
+        public Checkbox(string name, string? label, object? value) : base("checkbox") {
             Name = name;
             Label = label;
             Value = value;
@@ -55,7 +55,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
         /// <param name="isChecked">Whether the field should initially be checked.</param>
-        public Checkbox(string name, string label, object value, bool isChecked) : base("checkbox") {
+        public Checkbox(string name, string? label, object? value, bool isChecked) : base("checkbox") {
             Name = name;
             Label = label;
             Value = value;

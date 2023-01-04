@@ -20,7 +20,7 @@ namespace Skybrud.Forms.Models.Fields {
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-placeholder</cref>
         /// </see>
         [JsonProperty("placeholder", NullValueHandling = NullValueHandling.Ignore)]
-        public string Placeholder { get; set; }
+        public string? Placeholder { get; set; }
 
         /// <summary>
         /// The pattern attribute, when specified, is a regular expression that the input's value must match in order
@@ -34,7 +34,7 @@ namespace Skybrud.Forms.Models.Fields {
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-pattern</cref>
         /// </see>
         [JsonProperty("pattern", NullValueHandling = NullValueHandling.Ignore)]
-        public string Pattern { get; set; }
+        public string? Pattern { get; set; }
 
         /// <summary>
         /// Gets or sets the size of the input field. Valid for <c>email</c>, <c>password</c>, <c>tel</c>, <c>url</c>
@@ -70,7 +70,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="type">The type of the field.</param>
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
-        protected InputField(string type, string name, string label) : base(type, name, label) { }
+        protected InputField(string type, string name, string? label) : base(type, name, label) { }
 
         /// <summary>
         /// Initializes a new input field with the specified <paramref name="name"/> and <paramref name="value"/>.
@@ -79,7 +79,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// <param name="name">The name of the field.</param>
         /// <param name="label">The label of the field.</param>
         /// <param name="value">The value of the field.</param>
-        protected InputField(string type, string name, string label, object value) : base(type, name, label, value) { }
+        protected InputField(string type, string name, string? label, object? value) : base(type, name, label, value) { }
 
         #endregion
 

@@ -119,7 +119,7 @@ namespace Skybrud.Forms.Models.Fields {
         /// the value of that attribute; otherwise the name will be based on the name of the enum field.</remarks>
         public ListItem(Enum value) {
             Value = value.ToCamelCase();
-            Label = value.HasCustomAttribute(out DescriptionAttribute result) ? result.Description : value.ToString();
+            Label = value.HasCustomAttribute(out DescriptionAttribute? result) ? result.Description : value.ToString();
         }
 
         /// <summary>
