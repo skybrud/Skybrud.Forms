@@ -17,6 +17,14 @@ namespace Skybrud.Forms.Models.Fields {
         public string Type { get; }
 
         /// <summary>
+        /// Gets or sets the ID of the field. This will typically be the value for the <c>id</c> attribute of the
+        /// HTML element.
+        /// </summary>
+        /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
+        [JsonProperty("id", Order = -375, NullValueHandling = NullValueHandling.Ignore)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// Gets or sets the name of the field. This will typically be the value for the <c>name</c> attribute of the
         /// HTML element.
         /// </summary>
