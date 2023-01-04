@@ -156,6 +156,32 @@ namespace Skybrud.Forms.Models.Fields {
 
         }
 
+        /// <summary>
+        /// Sets the placeholder text of the specified <paramref name="list"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the list.</typeparam>
+        /// <param name="list">The list.</param>
+        /// <param name="placeholder">The placeholder text.</param>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
+        public static T SetPlaceholder<T>(this T list, string placeholder) where T : ListBase {
+            if (list is null) return null;
+            list.Placeholder = placeholder;
+            return list;
+        }
+
+        /// <summary>
+        /// Appends <paramref name="list"/> to <paramref name="form"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the list.</typeparam>
+        /// <param name="list">The list.</param>
+        /// <param name="form">The form.</param>
+        /// <returns><paramref name="list"/> - which may be used for method chaining.</returns>
+        public static T AppendTo<T>(this T list, Form form) where T : ListBase {
+            if (list is null) return null;
+            form.Fields.Add(list);
+            return list;
+        }
+
     }
 
 }

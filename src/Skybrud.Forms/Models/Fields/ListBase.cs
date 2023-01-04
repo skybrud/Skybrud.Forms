@@ -13,6 +13,12 @@ namespace Skybrud.Forms.Models.Fields {
         #region Properties
 
         /// <summary>
+        /// Gets or sets the placeholder text of the field.
+        /// </summary>
+        [JsonProperty("placeholder", NullValueHandling = NullValueHandling.Ignore)]
+        public string Placeholder { get; set; }
+
+        /// <summary>
         /// Gets or sets the items making up the list.
         /// </summary>
         [JsonProperty("items", Order = 510)]

@@ -64,6 +64,72 @@ namespace Skybrud.Forms.Models.Fields {
 
         #endregion
 
+        #region Static methods
+
+        /// <summary>
+        /// Initializes a new drop-down list with default values.
+        /// </summary>
+        public static DropDownList Create() {
+            return new DropDownList();
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        public static DropDownList Create(string name) {
+            return new DropDownList(name);
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/> and <paramref name="items"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        /// <param name="items">The items that should make up the drop-down list.</param>
+        public static DropDownList Create(string name, IEnumerable<ListItem> items) {
+            return new DropDownList(name, items);
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/> and <paramref name="items"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        /// <param name="items">The items that should make up the drop-down list.</param>
+        public static DropDownList Create(string name, params ListItem[] items) {
+            return new DropDownList(name, items);
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/> and <paramref name="label"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        /// <param name="label">The label of the drop-down list.</param>
+        public static DropDownList Create(string name, string label) {
+            return new DropDownList(name, label);
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/>, <paramref name="label"/> and <paramref name="items"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        /// <param name="label">The label of the drop-down list.</param>
+        /// <param name="items">The items that should make up the drop-down list.</param>
+        public static DropDownList Create(string name, string label, IEnumerable<ListItem> items) {
+            return new DropDownList(name, label, items);
+        }
+
+        /// <summary>
+        /// Initializes a new drop-down list with the specified <paramref name="name"/>, <paramref name="label"/> and <paramref name="items"/>.
+        /// </summary>
+        /// <param name="name">The name of the drop-down list.</param>
+        /// <param name="label">The label of the drop-down list.</param>
+        /// <param name="items">The items that should make up the drop-down list.</param>
+        public static DropDownList Create(string name, string label, params ListItem[] items) {
+            return new DropDownList(name, label, items);
+        }
+
+        #endregion
+
     }
 
 }

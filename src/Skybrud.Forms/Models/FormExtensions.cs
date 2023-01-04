@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Skybrud.Forms.Models.Fields;
 
+// ReSharper disable MethodOverloadWithOptionalParameter
 // ReSharper disable InconsistentNaming
 
 namespace Skybrud.Forms.Models {
@@ -506,6 +507,23 @@ namespace Skybrud.Forms.Models {
         /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
         public static T AddDropDownList<T, TEnum>(this T form, string name, string label, TEnum defaultValue) where T : Form where TEnum : Enum {
             form?.Fields.Add(new DropDownList(name, label).AddItems(defaultValue));
+            return form;
+        }
+
+        /// <summary>
+        /// Appends a new drop-down list to <paramref name="form"/>'s list of fields with the values based on <typeparamref name="TEnum"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the form.</typeparam>
+        /// <typeparam name="TEnum">The type of the enum on which the items for this field should be based.</typeparam>
+        /// <param name="form">The form.</param>
+        /// <param name="name">The name of the field.</param>
+        /// <param name="label">The label of the field.</param>
+        /// <param name="defaultValue">An enum value indicating the default value whose corresponding item should be initially checked.</param>
+        /// <param name="placeholder">A placeholder text to be used for the field.</param>
+        /// <returns><paramref name="form"/> - which may be used for mehtod chaining.</returns>
+        public static T AddDropDownList<T, TEnum>(this T form, string name, string label, TEnum defaultValue, string placeholder = null) where T : Form where TEnum : Enum {
+            var ddl = new DropDownList(name, label).AddItems(defaultValue).SetPlaceholder(placeholder);
+            form?.Fields.Add(ddl);
             return form;
         }
 
