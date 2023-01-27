@@ -11,6 +11,8 @@ namespace Skybrud.Forms.Models.Fields {
     /// </summary>
     public class ListItem {
 
+        private string? _label;
+
         #region Properties
 
         /// <summary>
@@ -23,7 +25,10 @@ namespace Skybrud.Forms.Models.Fields {
         /// Gets or sets the label of the item.
         /// </summary>
         [JsonProperty("label", Order = -98)]
-        public string Label { get; set; }
+        public string? Label {
+            get { return string.IsNullOrWhiteSpace(_label) ? GetLabel() : _label; }
+            set { _label = value; }
+        }
 
         /// <summary>
         /// Gets or sets whether the item should be checked.
@@ -131,6 +136,18 @@ namespace Skybrud.Forms.Models.Fields {
         /// the value of that attribute; otherwise the name will be based on the name of the enum field.</remarks>
         public ListItem(Enum value, bool isChecked) : this(value) {
             IsChecked = isChecked;
+        }
+
+        #endregion
+
+        #region Member methods
+
+        /// <summary>
+        /// Returns a calculated label for the item.
+        /// </summary>
+        /// <returns>A string representing the label.</returns>
+        protected virtual string? GetLabel() {
+            return null;
         }
 
         #endregion
