@@ -75,12 +75,13 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text to be used for the field.</param>
         /// <param name="value">The initial value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="required">Whether the field list is required.</param>
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddEmailField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddEmailField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new EmailField {
                 Name = name,
                 Id = id,
@@ -88,6 +89,7 @@ namespace Skybrud.Forms.Models {
                 Description = description,
                 Placeholder = placeholder,
                 Value = value,
+                DefaultValue = defaultValue,
                 IsRequired = required,
                 IsDisabled = disabled
             });
@@ -104,6 +106,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text of the field.</param>
         /// <param name="value">The value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="size">The size of the input field.</param>
@@ -111,7 +114,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddTextField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, string? pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddTextField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, string? pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TextField {
                 Name = name,
                 Id = id,
@@ -119,6 +122,7 @@ namespace Skybrud.Forms.Models {
                 Description = description,
                 Placeholder = placeholder,
                 Value = value,
+                DefaultValue = defaultValue,
                 Pattern = pattern,
                 Size = size,
                 IsRequired = required,
@@ -137,12 +141,13 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text to be used for the field.</param>
         /// <param name="value">The initial value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="required">Whether the field list is required.</param>
         /// <param name="disabled">Whether the field list is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddPasswordField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddPasswordField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new PasswordField {
                 Name = name,
                 Id = id,
@@ -150,6 +155,7 @@ namespace Skybrud.Forms.Models {
                 Description = description,
                 Placeholder = placeholder,
                 Value = value,
+                DefaultValue = defaultValue,
                 IsRequired = required,
                 IsDisabled = disabled
             });
@@ -166,13 +172,14 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text to be used for the field.</param>
         /// <param name="value">The initial value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="size">The size of the input field.</param>
         /// <param name="required">Whether the field is required.</param>
         /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddDateField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddDateField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new DateField {
                 Name = name,
                 Id = id,
@@ -180,6 +187,7 @@ namespace Skybrud.Forms.Models {
                 Description = description,
                 Placeholder = placeholder,
                 Value = value,
+                DefaultValue = defaultValue,
                 Size = size,
                 IsRequired = required,
                 IsDisabled = disabled
@@ -197,6 +205,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text of the textarea.</param>
         /// <param name="value">The value of the textarea.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="size">The size of the textarea.</param>
@@ -205,11 +214,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddTextarea<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, string? pattern = null, int? size = null, int? rows = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddTextarea<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, string? pattern = null, int? size = null, int? rows = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TextArea {
                 Name = name,
                 Id = id,
                 Value = value,
+                DefaultValue = defaultValue,
                 Label = label,
                 Description = description,
                 Placeholder = placeholder,
@@ -232,6 +242,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text of the field.</param>
         /// <param name="value">The value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="size">The size of the input field.</param>
@@ -239,11 +250,12 @@ namespace Skybrud.Forms.Models {
         /// <param name="disabled">Whether the field is disabled.</param>
         /// <returns><paramref name="form"/> - which may be used for method chaining.</returns>
         [return: NotNullIfNotNull("form")]
-        public static T? AddTelField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, string? pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddTelField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, string? pattern = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new TelField {
                 Name = name,
                 Id = id,
                 Value = value,
+                DefaultValue = defaultValue,
                 Label = label,
                 Description = description,
                 Placeholder = placeholder,
@@ -265,6 +277,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="description">The description of the field.</param>
         /// <param name="placeholder">The placeholder text of the field.</param>
         /// <param name="value">The value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="pattern">A regex pattern the value should match.</param>
         /// <param name="min">The value for the input field's <c>min</c> attribute.</param>
@@ -278,7 +291,7 @@ namespace Skybrud.Forms.Models {
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number</cref>
         /// </see>
         [return: NotNullIfNotNull("form")]
-        public static T? AddNumberField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, string? id = null, string? pattern = null, int? min = null, int? max = null, int? step = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddNumberField<T>(this T? form, string name, string? label = null, string? description = null, string? placeholder = null, object? value = null, object? defaultValue = null, string? id = null, string? pattern = null, int? min = null, int? max = null, int? step = null, int? size = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new NumberField {
                 Name = name,
                 Id = id,
@@ -286,6 +299,7 @@ namespace Skybrud.Forms.Models {
                 Description = description,
                 Placeholder = placeholder,
                 Value = value,
+                DefaultValue = defaultValue,
                 Pattern = pattern,
                 Min = min,
                 Max = max,
@@ -306,6 +320,7 @@ namespace Skybrud.Forms.Models {
         /// <param name="label">The label of the field.</param>
         /// <param name="description">The description of the field.</param>
         /// <param name="value">The value of the field.</param>
+        /// <param name="defaultValue">The default value of the field. Not the same as <paramref name="value"/>.</param>
         /// <param name="id">The ID of the field.</param>
         /// <param name="required">Whether the field is required.</param>
         /// <param name="disabled">Whether the field is disabled.</param>
@@ -314,12 +329,13 @@ namespace Skybrud.Forms.Models {
         ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox</cref>
         /// </see>
         [return: NotNullIfNotNull("form")]
-        public static T? AddCheckbox<T>(this T? form, string name, string? id = null, string? label = null, string? description = null, object? value = null, bool required = false, bool disabled = false) where T : Form {
+        public static T? AddCheckbox<T>(this T? form, string name, string? id = null, string? label = null, string? description = null, object? value = null, object? defaultValue = null, bool required = false, bool disabled = false) where T : Form {
             form?.Fields.Add(new Checkbox(name, label) {
                 Id = id,
                 Label = label,
                 Description = description,
                 Value = value,
+                DefaultValue = defaultValue,
                 IsRequired = required,
                 IsDisabled = disabled
             });

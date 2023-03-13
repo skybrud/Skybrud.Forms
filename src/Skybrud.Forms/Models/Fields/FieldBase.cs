@@ -68,6 +68,13 @@ namespace Skybrud.Forms.Models.Fields {
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore, Order = 500)]
         public object? Value { get; set; }
 
+        /// <summary>
+        /// Gets or sets the default value of the field.
+        /// </summary>
+        /// <remarks>If set to <see langword="null"/>, this property will be omitted when serializing the field to JSON.</remarks>
+        [JsonProperty("defaultValue", NullValueHandling = NullValueHandling.Ignore, Order = 501)]
+        public object? DefaultValue { get; set; }
+
         #endregion
 
         #region Constructors
